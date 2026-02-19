@@ -179,7 +179,7 @@ const Sidebar = () => {
         </div>
 
         <div className="p-4 text-xs text-gray-400">
-          © 2026 Library System
+          © 2025 Library System
         </div>
       </aside>
     </>

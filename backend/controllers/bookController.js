@@ -45,8 +45,8 @@ exports.addBook = async (req, res) => {
       title,
       author,
       category,
-      pdf: req.files?.pdf?.[0]?.filename || "",
-      cover: req.files?.cover?.[0]?.filename || ""
+      pdf: req.files?.pdf?.[0]?.path || "",
+      cover: req.files?.cover?.[0]?.path || ""
     });
 
     res.json(book);

@@ -257,8 +257,8 @@ const AdminBooks = () => {
           {filteredBooks.map(b => (
             <div key={b._id} className="bg-white dark:bg-gray-800 p-4 rounded shadow">
               <img
-                src={`${import.meta.env.VITE_API_URL}/uploads/covers/${b.cover}`}
-                alt=""
+                src={`${import.meta.env.VITE_API_URL}/${b.cover}`}
+                alt={b.title}
                 className="w-full h-48 object-cover rounded"
               />
               <h3 className="font-semibold mt-2 text-gray-800 dark:text-white">{b.title}</h3>

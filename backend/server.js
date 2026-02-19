@@ -38,10 +38,7 @@ const allowedOrigins = [
 
 
 app.use(cors({
-  origin: [
-    "https://burmese-library-system.vercel.app",
-    "http://localhost:5173"
-  ],
+  origin: true,
   credentials: true
 }));
 

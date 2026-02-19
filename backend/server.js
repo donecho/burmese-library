@@ -14,6 +14,7 @@ const userRoutes =require("./routes/userRoutes")
 const errorHandler = require("./middleware/errorHandler");
 const adminRoutes = require("./routes/adminRoutes");
 const adminUserRoutes = require("./routes/adminUserRoutes");
+const path = require("path");
 
 
 
@@ -63,7 +64,7 @@ app.use('/api/borrow', borrowRoutes);
 app.use('/api/dashboard', dashRoutes);
 app.use("/api/status", statusRoute);
 app.use("/api/users", userRoutes);
-app.use("/uploads", express.static("uploads"));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/admin", adminRoutes);
 app.use("/api/admin/users", adminUserRoutes);
 
@@ -80,7 +81,7 @@ const startServer = async () => {
     const PORT = process.env.PORT || 5000;
 
     app.listen(PORT, () => {
-      // console.log(`Server running at http://localhost:${PORT}`);
+    
       console.log(`🚀 Server running on port ${PORT}`);
     });
 

@@ -31,12 +31,25 @@ app.use(
 
 app.use(express.json());
 
-app.use(cors(
-  {
-     origin: ["http://localhost:5173", "http://127.0.0.1:5173"], //inprocution->origin: "https://yourdomain.com"
-    credentials: true
-  }
-));
+const cors = require("cors");
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://127.0.0.1:5173",
+  "https://library-collections.vercel.app"
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
+}));
+
 
 
 

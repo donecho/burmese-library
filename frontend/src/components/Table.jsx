@@ -17,7 +17,7 @@ const Table = ({
           <img
             src={
               book.cover
-                ? `http://localhost:5000/uploads/covers/${book.cover}`
+                ? `${import.meta.env.VITE_API_URL}/uploads/covers/${book.cover}`
                 : "/no-image.png"
             }
             className="h-60 object-cover rounded"
@@ -34,7 +34,7 @@ const Table = ({
           <div className="flex justify-between mt-auto pt-4">
 
             <a
-              href={`http://localhost:5000/uploads/books/${book.pdf}`}
+              href={`${import.meta.env.VITE_API_URL}/uploads/books/${book.pdf}`}
               target="_blank"
               rel="noreferrer"
               className="bg-indigo-600  text-white px-3 py-1 rounded"
